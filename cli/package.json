@@ -1,10 +1,10 @@
 {
-  "name": "first-commit-2026",
-  "version": "0.1.0",
-  "description": "Commit-style fun CLI for first-commit-2026",
+  "name": "commit-2026",
+  "version": "0.1.1",
+  "description": "Commit-style fun CLI for commit-2026",
   "type": "module",
   "bin": {
-    "first-commit-2026": "./bin/first-commit-2026.js"
+    "commit-2026": "./bin/commit-2026.js"
   },
   "engines": {
     "node": ">=18"

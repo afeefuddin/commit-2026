@@ -22,7 +22,11 @@ type CommitPayload = {
 const app = new Hono<{ Bindings: Bindings }>();
 
 app.get("/", (c) => {
-  return c.text("first-commit-2026 worker is running");
+  return c.text("commit-2026 worker is running");
+});
+
+app.get("/health", (c) => {
+  return c.json({ ok: true, status: "healthy" });
 });
 
 app.post("/commit", async (c) => {

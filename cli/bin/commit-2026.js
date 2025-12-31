@@ -1,17 +1,11 @@
 #!/usr/bin/env node
 import { spawnSync } from "node:child_process";
-const DEFAULT_BASE_URL = "https://YOUR_WORKER_URL";
+const DEFAULT_BASE_URL = "https://first-commit-2026.afeefuddin.com";
 
 const args = process.argv.slice(2);
 const [command, ...rest] = args;
 
-const baseUrl = process.env.FIRST_COMMIT_URL || DEFAULT_BASE_URL;
-if (baseUrl === DEFAULT_BASE_URL) {
-  console.error(
-    "Missing Worker URL. Set FIRST_COMMIT_URL or replace DEFAULT_BASE_URL in the CLI."
-  );
-  process.exit(1);
-}
+const baseUrl = DEFAULT_BASE_URL;
 
 main(command, rest).catch((error) => {
   console.error(error instanceof Error ? error.message : String(error));
@@ -282,12 +276,12 @@ function detectGitAuthor(execSync) {
 }
 
 function printUsage() {
-  console.log(`first-commit-2026
+  console.log(`commit-2026
 
 Usage:
-  first-commit-2026
-  first-commit-2026 commit --name "Ada" --email "ada@lovelace.dev" --message "first commit"
-  first-commit-2026 logs --n 10
+  commit-2026
+  commit-2026 commit --name "Ada" --email "ada@lovelace.dev" --message "first commit"
+  commit-2026 logs --n 10
 
 Options:
   commit:
@@ -319,11 +313,9 @@ function printCommitSuccess(entry) {
   console.log(color("yellow", "🎉 🎊 🎉 🎊 🎉"));
   console.log("");
   printGitLogEntry(entry);
+  console.log(color("cyan", "Tip: run `npx commit-2026 logs` to view history."));
   console.log(
-    color("cyan", "Tip: run `npx first-commit-2026 logs` to view history.")
-  );
-  console.log(
-    color("cyan", "Tip: run `npx first-commit-2026 --help` to see all commands.")
+    color("cyan", "Tip: run `npx commit-2026 --help` to see all commands.")
   );
 }
 
