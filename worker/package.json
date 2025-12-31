@@ -1,6 +1,7 @@
 {
   "name": "worker",
   "type": "module",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
